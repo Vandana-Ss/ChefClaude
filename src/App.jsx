@@ -6,8 +6,10 @@ function App() {
 
   return (
     <>
+    <main className='app-container'>
       <Header/>
       <Page/>
+    </main>
     </>
   )
 }

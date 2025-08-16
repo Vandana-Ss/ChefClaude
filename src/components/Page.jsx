@@ -1,32 +1,50 @@
 import { useState } from "react"
 
 function Page() {
+
     const [ingredients, setIngredients] = useState([])
 
-    const listItems = ingredients.map(item => (
-        <li key={item}>{item}</li>
+    const ingredientsListItems = ingredients.map(ingredient => (
+        <li key={ingredient}>{ingredient}</li>
     ))
 
-    function addItem(e){
-        e.preventDefault()
-        const formInput = new FormData(e.currentTarget)
-        const newItem = formInput.get("ingredient")
-        setIngredients(prev => [...prev, newItem])
+    function addIngredient(formData) {
+        const newIngredient = formData.get("ingredient").trim()
+
+        if (newIngredient) {
+            setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+        }
     }
 
-    return (
-        <>
-            <form onSubmit={addItem}>
-                <input type='text' placeholder='e.g. oregano' className='input-class' name="ingredient"/>
-                <button className='add-button'>Add ingredients</button>
-            </form>
-            <span>add atleast 5 ingredients.</span>
 
-            <ul>
-                {listItems}
-            </ul>
-        </>
+    return (
+        <main>
+            <form action={addIngredient} className="add-ingredient-form">
+                <input
+                    type="text"
+                    placeholder="e.g. oregano"
+                    aria-label="Add ingredient"
+                    name="ingredient"
+                />
+                <button>Add ingredient</button>
+            </form>
+            <span className="note-line">*add atleast 4 ingredients*</span>
+            {ingredients.length > 0 && <section>
+                <h2>Ingredients on hand:</h2>
+                <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+                {ingredients.length > 3 &&
+                    <div className="get-recipe-container">
+                        <div>
+                            <h3>Ready for a recipe?</h3>
+                            <p>Generate a recipe from your list of ingredients.</p>
+                        </div>
+                        <button>Get a recipe</button>
+                    </div>
+                }
+            </section>}
+        </main>
     )
 }
+
 
 export default Page
