@@ -28,5 +28,10 @@ It allows users to generate recipes instantly based on their input using an exte
    VITE_API_KEY=your_api_key_here
 4. Run the development server:
    ```bash
-   npm run dev  
+   npm run dev
+   
+## Screenshot
+<img width="900" height="914" alt="image" src="https://github.com/user-attachments/assets/e0485386-e78e-4faa-89e7-4ec48d02d585" />
+
+
 
