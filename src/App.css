@@ -2,10 +2,12 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Inter, sans-serif;
-    background-color: #FAFAF8;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, san-serif;
 }
 
 header {
@@ -14,20 +16,22 @@ header {
     align-items: center;
     gap: 11px;
     height: 80px;
+    margin-bottom: 25px;
     background-color: white;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
-header > img {
+header>img {
     width: 50px;
 }
 
-header > h1 {
+header>h1 {
     font-weight: 400;
 }
 
-main {
-    padding: 30px 30px 10px;
+.app-container {
+    flex: 1;
+    margin: 50px;
 }
 
 .add-ingredient-form {
@@ -37,7 +41,7 @@ main {
     height: 38px;
 }
 
-.add-ingredient-form > input {
+.add-ingredient-form>input {
     border-radius: 6px;
     border: 1px solid #D1D5DB;
     padding: 9px 13px;
@@ -47,7 +51,7 @@ main {
     max-width: 400px;
 }
 
-.add-ingredient-form > button {
+.add-ingredient-form>button {
     font-family: Inter, sans-serif;
     border-radius: 6px;
     border: none;
@@ -58,24 +62,23 @@ main {
     font-weight: 500;
 }
 
-.add-ingredient-form > button::before {
-    content: "+";
+.add-ingredient-form>button::before {
     margin-right: 5px;
 }
 
-.note-line{
-  color: red;
-  font-size: smaller;
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
+.note-line {
+    color: red;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
 }
 
 ul.ingredients-list {
     margin-bottom: 48px;
 }
 
-ul.ingredients-list > li {
+ul.ingredients-list>li {
     color: #475467;
     line-height: 28px;
 }
@@ -111,4 +114,64 @@ ul.ingredients-list > li {
     font-family: Inter, sans-serif;
     font-size: 0.875rem;
     cursor: pointer;
+}
+
+.recipe-container {
+    margin-top: 20px;
+    padding: 20px;
+    font-family: Inter, san-serif;
+}
+
+.recipe-container li {
+    color: #475467;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+    background: #F0EFEB;
+    padding: 10px 28px;
+    margin-top: 40px;
+}
+
+.reset-container button {
+    border: none;
+    border-radius: 6px;
+    background: #D17557;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    color: #FAFAF8;
+    padding: 9px 17px;
+    font-family: Inter, sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+/*.footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #475467;
+  border-top: 1px solid #e0e0e0;
+}*/
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  color: #333;
+  font-size: smaller;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #D17557; 
 }
