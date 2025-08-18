@@ -1,4 +1,4 @@
-# 🍳 Recipe Finder App
+# 🍳 AI INTEGRATED RECIPE GENERATOR APP
 
 A simple and interactive Recipe Finder App built with **React**.  
 It allows users to generate recipes instantly based on their input using an external API.  
